@@ -1,0 +1,29 @@
+version: "3"
+services:
+  server: #Первый сервис (контейнер) - сервер
+    build: .     # Ключевое слово "build" позволяет задать
+    # путь к файлу Dockerfile, который нужно использовать для создания образа,
+    # который позволит запустить сервис.
+    # Здесь 'server/' соответствует пути к папке сервера,
+    # которая содержит соответствующий Dockerfile.
+    container_name: deepsort_server #имя нашего контейнера
+    restart: always #перезапустит контейнер, если тот вдруг остановится
+    ports: #перенаправление порта на порт компьютера
+      - "8888:8888"
+    depends_on: #сервер запустится, если к работе будет готов сервис postgres
+      - postgres
+
+  postgres: #Второй сервис (контейнер) - бд
+    image: postgres #имя образа
+    container_name: db_deepsort #имя контейнера
+    environment: #environment переменные
+      POSTGRES_DB: "db_track" #имя бд
+      POSTGRES_USER: "admindb" #пользователь
+      POSTGRES_PASSWORD: "pass" #пароль 
+
+  adminer: #Третий сервис - adminer. Нужен для управления бд
+    image: adminer #имя образа
+    container_name: admin_deepsort  #имя контейнера
+    restart: always #перезапустит контейнер, если тот вдруг остановится
+    ports: #порты
+      - "8080:8080"

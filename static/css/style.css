@@ -1,0 +1,76 @@
+html {
+  font-size: 18px; /*размер шрифта */
+  font-family: system-ui;/* шрифт */
+  background-color: rgb(34, 33, 43); /*  цвет фона */
+  color: rgb(189, 189, 189); /*цвет текста */
+}
+video {
+  color: black;
+  background-color: rgb(0, 169, 211);
+  width: 500px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid black;
+}
+.flash {
+  padding: 8px; /* устанавливает внутренние отступы/поля со всех сторон элемента */
+  margin-left: 25%; /*устанавливает внешний отступ слева от элемента*/
+  margin-right: 22.8%;/* устанавливает внешний отступ cправа от элемента*/
+  border-radius: 5px; /* округление */
+}
+.flash.nofile{
+  font-size: 18px;
+  background: rgb(44, 62, 74);
+}
+.flash.error {
+  font-size: 18px;
+  background: rgb(135, 54, 54);
+}
+body{
+    padding-top: 18px;
+    margin: 0px; /*внешний отступ на всех четырёх сторонах элемента*/
+    padding-bottom: 100px;
+    font-family: system-ui;
+    letter-spacing: 0.7px;
+}
+.install {
+  display: block;
+  margin-left: 8%;
+}
+nav {
+    background-color: rgb(38, 39, 51);
+    width: 100%; /*Устанавливает ширину блочных или заменяемых элементов*/
+    margin-top: -18px;
+    border-bottom: 10px;
+    height: 50px; /*высота элемента*/
+}
+input{
+    background-color: rgb(50, 53, 69);
+    border: 10px;
+    margin-top: 12px;
+    border-radius: 5px;
+    margin-left: 43%;
+    font-family: system-ui;
+    transition-duration: 70ms;
+    font-size:20px;
+    color: rgb(189, 189, 189);
+}
+
+input:hover{ /*изменение цвета при наведении */
+    background-color: white;
+    transition-duration: 70ms; /*определяет продолжительность выполнения анимации.*/
+    color:black; /*цвет шрифта*/
+    border-radius: 5px;
+} /*отступы от кнопок*/
+input + input{
+    margin-left: 1%;
+}
+p{
+    margin-left: 10px;
+}
+pre{
+    margin-left: -1%;
+    font-family: system-ui;
+    line-height: 24px;
+}

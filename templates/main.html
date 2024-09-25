@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+		<style>
+	</style>
+        <title>Главная</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <form action="" method="post">
+            <nav>
+                <input type="submit" name="main" value="Главная">
+                <input type="submit" name="info" value="Информация">
+            </nav>
+        </form>
+        <div style="text-align: center;">
+            <img src="{{ url_for('static', filename='images/track.gif') }}" width="25%">
+        </div>
+        {% for cat, msg in get_flashed_messages(True) %}
+        <div class="flash {{cat}}">{{msg}}</div>
+        {% endfor %}
+        <form method="POST" enctype="multipart/form-data">
+            <div class="input_file">
+                <input type="file" name="file">
+                <input type="submit" value="Начать">
+            </div>
+        </form>
+        <p>Для трекинга нужно загрузить файл с форматом mp4. </p>
+        <p>После отправки файла нужно подождать некоторое время. После этого на ваш компьютер будет загружен файл с результатом обработки.</p>
+    </body>
+</html>
